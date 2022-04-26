@@ -152,16 +152,12 @@
             }).then(response => {
 
                 if (response.data.status == 200){
-                    console.log(response)
                     document.getElementById("completed").style.display = "block"
                     document.getElementById("form-validation").style.display = "none"
-                    // document.getElementById("message").value = response.data.message
                 }else{
                     alert(response.data.message)
-                    console.log(response)
                 }
             }, error => {
-                console.log(error.message)
             })
         }
     }
