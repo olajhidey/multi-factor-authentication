@@ -124,17 +124,14 @@
             } else {
                 axios.post("/api/voice", {phoneNumber: phone}).then((response) => {
                     document.getElementById("loading").style.display = "none"
-                    console.log(response)
                     if (response.status === 200) {
-                        console.log(response)
                         document.getElementById("form-otp").style.display = "none"
                         document.getElementById("form-validation").style.display = "block"
                     } else {
-                        console.log(response)
+                        alert(response.data.message)
                     }
                 }, error => {
                     document.getElementById("loading").style.display = "none"
-                    console.log(error)
                 })
             }
 
